@@ -74,7 +74,7 @@ connect(){
 }
 
 main(){
-  echo "autoLoginWLT 2.1.1-4 starts"
+  echo "autoLoginWLT 3.1.0-r6 starts"
   while true
   do
     check
