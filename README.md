@@ -50,11 +50,15 @@ To build and run docker image, please refer to [docker project](https://www.dock
 
 ## History
 
+### 4.1.0-r8
+
+* Changed docker base-image from centos to alpine to reduce size.
+
 ### 4.0.0-r7
 
 * Added ENV port, now it is supported to choose the network export.
 
-* Reduce the SLEEP time in code, now it reconnects faster.
+* Reduced the SLEEP time in code, now it reconnects faster.
 
 * Added Init code to show ENV settings.
 
