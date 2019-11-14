@@ -50,6 +50,10 @@ To build and run docker image, please refer to [docker project](https://www.dock
 
 ## History
 
+### 4.1.1-r9
+
+* Fixed bug.
+
 ### 4.1.0-r8
 
 * Changed docker base-image from centos to alpine to reduce size.

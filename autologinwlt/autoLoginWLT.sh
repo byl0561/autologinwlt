@@ -36,7 +36,7 @@ connect(){
 	echo "Access success"
   fi
   ip=$(grep -o -m 1 "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" getIP)
-  curl http://202.38.64.59/cgi-bin/ip -X POST -H "application/x-www-form-urlencoded" -d "cmd=login&url=URL&ip=${ip}&name=${name}&password=${pass}&set=%B5%C7%C2%BC%D5%CA%BB%A7" -m 10  -o getCookie -s -i
+  curl http://202.38.64.59/cgi-bin/ip -X POST -H "application/x-www-form-urlencoded" -d "cmd=login&url=URL&ip=${ip}&name=${name}&password=${pass}&go=%B5%C7%C2%BC%D5%CA%BB%A7" -m 10  -o getCookie -s -i
   if [[ $? != 0 ]];then
 	echo "Login fail"
 	return 1
