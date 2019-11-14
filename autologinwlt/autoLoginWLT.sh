@@ -69,7 +69,7 @@ connect(){
 }
 
 init(){
-  echo "autoLoginWLT 4.1.0-r8 starts"
+  echo "autoLoginWLT 4.1.1-r9 starts"
   echo "username: $name"
   echo "password: $pass"
   case $port in
