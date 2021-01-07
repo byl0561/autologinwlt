@@ -3,7 +3,6 @@
 check(){
   ping -c 2 -w 5 www.baidu.com > /dev/null 2>&1
   if [[ $? != 0 ]];then
-    echo "Ping fail, try again..."
 	ping -c 4 -w 5 www.baidu.com > /dev/null 2>&1
 	if [[ $? != 0 ]];then
       echo "Ping fail"
@@ -15,8 +14,6 @@ check(){
 	  done
 	  echo "Connect success"
 	  sleep 15
-	else
-	  echo "Ping success"
 	fi
   fi
 }
@@ -33,7 +30,6 @@ connect(){
 	  echo "Cannot find IPAddress, or Access fail"
 	  return 1
 	fi
-	echo "Access success"
   fi
   ip=$(grep -o -m 1 "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" getIP)
   curl http://202.38.64.59/cgi-bin/ip -X POST -H "application/x-www-form-urlencoded" -d "cmd=login&url=URL&ip=${ip}&name=${name}&password=${pass}&go=%B5%C7%C2%BC%D5%CA%BB%A7" -m 10  -o getCookie -s -i
@@ -46,7 +42,6 @@ connect(){
 	  echo "Cannot find Set-Cookie, or Login fail"
 	  return 1
 	fi
-	echo "Login success"
   fi
   cookie=$(grep "^Set-Cookie: rn=" getCookie)
   cookie=${cookie#*=}
@@ -55,21 +50,17 @@ connect(){
   if [[ $? != 0 ]];then
 	echo "Network authentication fail"
 	return 1
-  else
-	echo "Network authentication success"
   fi
   sleep 15
   ping -c 2 -w 5 www.baidu.com > /dev/null 2>&1
   if [[ $? != 0 ]];then
 	echo "Ping fail"
 	return 1
-  else
-	echo "Ping success"
   fi
 }
 
 init(){
-  echo "autoLoginWLT 4.1.1-r9 starts"
+  echo "autoLoginWLT 4.1.2-r10 starts"
   echo "username: $name"
   echo "password: $pass"
   case $port in
@@ -112,7 +103,7 @@ main(){
   while true
   do
     check
-    sleep 5
+    sleep 60
   done
 }
 

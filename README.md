@@ -2,21 +2,17 @@
 
 ---
 
-Auto Login WLT is an open source shell for USTCers to get net access in USTC with their personal campus account and password.
+Auto Login WLT 是一个Shell脚本，可自动连接USTC校园网认证服务，并确保不会由于网络波动等原因而断开网络连接。
 
-Auto Login WLT ensures that the network connection will not be dropped due to account reasons. Tt is suitable for a variety of scenariosapplies like task servers and NAS, even you just wanna access the Internet after turn on the PC without open the certification page.
-
-Auto Login WLT will connect [baidu.com](http://baidu.com/) periodically to test network connectivity. If the network is broken, It would automatically access [wlt.ustc.edu.cn](http://202.38.64.59/cgi-bin/ip), and then regist network with your account.
-
-Auto Login WLT is deployed in the docker environment as default. In fact, you can deploy it to any environment.
+Auto Login WLT 将定期连接 [baidu.com](http://baidu.com/) 以测试网络连接。 如果网络断开，它将自动访问 [wlt.ustc.edu.cn](http://202.38.64.59/cgi-bin/ip) ，然后使用您的帐户注册网络。
 
 ---
 
-## Deploy
+## 部署
 
-### Write name and password as environment variables
+### 设置环境变量
 
-Replace the original account and password with your personal campus ones in Dockerfile, then set the port.
+设置账户`name`，密码`pass`，出口`port`
 
 |port|网络出口|
 |:-:|:-:|
@@ -30,25 +26,29 @@ Replace the original account and password with your personal campus ones in Dock
 |7|8教育网出口2(国际,默认教育网,其他分流)|
 |8|9移动网出口(国际,无P2P或带宽限制)|
 
-from
+如`Dockerfile`文件中：
 ```
 	ENV name
 	ENV pass
 	ENV port
 ```
 
-to
+改为
 ```
 	ENV name "campus account"
 	ENV pass "campus password"
 	ENV port "0-8"
 ```
 
-### Build and Run docker image
+### 构建Docker镜像
 
-To build and run docker image, please refer to [docker project](https://www.docker.com/), or you could also run autoLoginWLT.sh in any environment.
+镜像构建方式，请参见Docker官方文档 [docker project](https://www.docker.com/), 或者您也可以直接运行`autoLoginWLT.sh`。
 
-## History
+## 历史版本
+
+### 4.1.2-r10
+
+* minimize log.
 
 ### 4.1.1-r9
 
