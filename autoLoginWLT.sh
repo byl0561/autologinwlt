@@ -19,7 +19,7 @@ check(){
 }
 
 connect(){
-  echo "Try to connect wls"
+  echo "Try to connect wlt"
   curl http://202.38.64.59/cgi-bin/ip -m 10 -o getIP -s
   if [[ $? != 0 ]];then
 	echo "Access fail"
@@ -60,7 +60,7 @@ connect(){
 }
 
 init(){
-  echo "autoLoginWLT 4.1.2-r10 starts"
+  echo "autoLoginWLT 4.1.3-r11 starts"
   echo "username: $name"
   echo "password: $pass"
   case $port in
