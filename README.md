@@ -46,26 +46,30 @@ Auto Login WLT 将定期连接 [baidu.com](http://baidu.com/) 以测试网络连
 
 ## 历史版本
 
+### 4.1.3-r11
+
+* Fix bug.
+
 ### 4.1.2-r10
 
-* minimize log.
+* Minimize log.
 
 ### 4.1.1-r9
 
-* Fixed bug.
+* Fix bug.
 
 ### 4.1.0-r8
 
-* Changed docker base-image from centos to alpine to reduce size.
+* Change docker base-image from centos to alpine to reduce size.
 
 ### 4.0.0-r7
 
-* Added ENV port, now it is supported to choose the network export.
+* Add ENV port, now it is supported to choose the network export.
 
-* Reduced the SLEEP time in code, now it reconnects faster.
+* Reduce the SLEEP time in code, now it reconnects faster.
 
-* Added Init code to show ENV settings.
+* Add Init code to show ENV settings.
 
 ### 3.1.0-r6
 
-* Published on github.
+* Publish on github.
