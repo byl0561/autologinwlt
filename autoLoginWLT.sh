@@ -20,7 +20,7 @@ check(){
 
 connect(){
   echo "Try to connect wlt"
-  curl http://202.38.64.59/cgi-bin/ip -m 10 -o getIP -s
+  curl http://wlt.ustc.edu.cn/cgi-bin/ip -m 10 -o getIP -s
   if [[ $? != 0 ]];then
 	echo "Access fail"
 	return 1
@@ -46,7 +46,7 @@ connect(){
   cookie=$(grep "^Set-Cookie: rn=" getCookie)
   cookie=${cookie#*=}
   cookie=${cookie:0:40}
-  curl http://202.38.64.59/cgi-bin/ip?cmd=set\&url=URL\&type=$port\&exp=0\&go=+%BF%AA%CD%A8%CD%F8%C2%E7+ --cookie "name=; password=; rn=$cookie" -m 10 -o result -s
+  curl http://wlt.ustc.edu.cn/cgi-bin/ip?cmd=set\&url=URL\&type=$port\&exp=0\&go=+%BF%AA%CD%A8%CD%F8%C2%E7+ --cookie "name=; password=; rn=$cookie" -m 10 -o result -s
   if [[ $? != 0 ]];then
 	echo "Network authentication fail"
 	return 1
